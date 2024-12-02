@@ -1,0 +1,8 @@
+"0","# Criar gráfico de boxplot comparando os grupos"
+"0","ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +"
+"0","  geom_boxplot() +"
+"0","  labs(title = ""Comparação de HDL entre diabéticos e não diabéticos"","
+"0","       x = ""Diabético"","
+"0","       y = ""Nível de HDL (mg/dL)"") +"
+"0","  theme_minimal() +"
+"0","  scale_fill_manual(values = c(""diabético"" = ""#FF00FF"", ""não diabético"" = ""#FFD700""))"

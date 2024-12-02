@@ -1,0 +1,8 @@
+"0","# Criar variável de grupo (diabético ou não)"
+"0","diabetes$diabetico <- ifelse(diabetes$glyhb >= 6.5, ""diabético"", ""não diabético"")"
+"0","diabetes$diabetico <- as.factor(diabetes$diabetico)"
+"0",""
+"0","# Filtrar dados válidos"
+"0","diabetes_clean <- diabetes %>%"
+"0","  filter(!is.na(hdl), !is.na(diabetico)) # Remover valores ausentes"
+"0",""

@@ -1,0 +1,120 @@
+{
+    "sources": [
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "rlanguage",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "http://www.rstudio.com/",
+            "author": [
+                {
+                    "literal": "RStudio Team"
+                }
+            ],
+            "id": "rstudio",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "RStudio, PBC.",
+            "publisher-place": "Boston, MA",
+            "title": "RStudio: Integrated development environment for r",
+            "title-short": "RStudio",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-3-319-24277-4",
+            "URL": "https://ggplot2.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "ggplot",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag New York",
+            "title": "ggplot2: Elegant graphics for data analysis",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Srivastava",
+                    "given": "Rai Ajit K"
+                }
+            ],
+            "container-title": "Molecular and cellular biochemistry",
+            "id": "srivastava2018",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "167-187",
+            "publisher": "Springer",
+            "title": "Dysfunctional HDL in diabetes mellitus and its role in the pathogenesis of cardiovascular disease",
+            "type": "article-journal",
+            "volume": "440"
+        },
+        {
+            "author": [
+                {
+                    "family": "Farbstein",
+                    "given": "Dan"
+                },
+                {
+                    "family": "Levy",
+                    "given": "Andrew P"
+                }
+            ],
+            "container-title": "Expert review of cardiovascular therapy",
+            "id": "farbstein2012",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "353-361",
+            "publisher": "Taylor & Francis",
+            "title": "HDL dysfunction in diabetes: Causes and possible treatments",
+            "title-short": "HDL dysfunction in diabetes",
+            "type": "article-journal",
+            "volume": "10"
+        }
+    ],
+    "project_biblios": []
+}

@@ -1,0 +1,48 @@
+@Manual{rlanguage,
+  title        = {R: A Language and Environment for Statistical Computing},
+  author       = {{R Core Team}},
+  organization = {R Foundation for Statistical Computing},
+  address      = {Vienna, Austria},
+  year         = {2021},
+  url          = {https://www.R-project.org/}
+}
+
+@Manual{rstudio,
+  title        = {RStudio: Integrated Development Environment for R}, 
+  author       = {{RStudio Team}}, 
+  organization = {RStudio, PBC.}, 
+  address      = {Boston, MA}, 
+  year         = {2020}, 
+  url          = {http://www.rstudio.com/}
+}
+
+@Book{ggplot,
+  author = {Hadley Wickham},
+  title = {ggplot2: Elegant Graphics for Data Analysis},
+  publisher = {Springer-Verlag New York},
+  year = {2016},
+  isbn = {978-3-319-24277-4},
+  url = {https://ggplot2.tidyverse.org},
+  }
+
+@article{srivastava2018,
+  title={Dysfunctional HDL in diabetes mellitus and its role in the pathogenesis of cardiovascular disease},
+  author={Srivastava, Rai Ajit K},
+  journal={Molecular and cellular biochemistry},
+  volume={440},
+  number={1},
+  pages={167--187},
+  year={2018},
+  publisher={Springer}
+}
+
+@article{farbstein2012,
+  title={HDL dysfunction in diabetes: causes and possible treatments},
+  author={Farbstein, Dan and Levy, Andrew P},
+  journal={Expert review of cardiovascular therapy},
+  volume={10},
+  number={3},
+  pages={353--361},
+  year={2012},
+  publisher={Taylor \& Francis}
+}

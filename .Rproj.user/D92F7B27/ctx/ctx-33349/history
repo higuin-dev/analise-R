@@ -1,0 +1,291 @@
+download.file(diabetes)
+library(readr)
+diabetes <- read_csv("C:/Users/acpin/OneDrive/Desktop/aula-R-arquivos/diabetes.csv")
+View(diabetes)
+library(readr)
+diabetes <- read_csv("diabetes.csv")
+View(diabetes)
+# insira aqui o código para o(s) gráficos que pretende usar
+data$diabetes <-
+ifelse(data$glyhb >= 6.5, "diabético")
+# insira aqui o código para o(s) gráficos que pretende usar
+diabetes$diabetico <-
+ifelse(data$glyhb >= 6.5, "diabético")
+# insira aqui o código para o(s) gráficos que pretende usar
+diabetes$diabetico <-
+ifelse(data$glyhb >= 6.5, "diabético", "não diabético")
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+# insira aqui o código para o(s) gráficos que pretende usar
+diabetes$diabetico <-
+ifelse(data$glyhb >= 6.5, "diabético", "não diabético")
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(data$glyhb >= 6.5, "diabético", "não diabético")
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+# insira aqui o código para o(s) gráficos que pretende usar
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes = aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+View(diabetes)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+drop_na(diabetes)
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+diabetes_clean <- diabetes %>%
+drop_na(glyhb, diabetico)
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(pipe)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+diabetes_clean <- diabetes %>%
+drop_na(hdl, diabetico)
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+# insira aqui o código para leitura dos dados
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+diabetes_clean <- diabetes %>%
+drop_na(hdl, diabetico)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+colnames(diabetes)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes %>%
+drop_na(hdl, diabetico)
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes %>%
+drop_na(hdl, diabetico)
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+diabetes_clean <- diabetes %>%
+drop_na(hdl, diabetico)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabeticos), ]
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabeticos), ]
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes, aes(x = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "comparação de HDL entre diabéticos e não diabéticos")
+diabetes_clean <- diabetes %>%
+filter(!is.na(hdl) & !is.na(diabetico))
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "Comparação de HDL entre diabéticos e não diabéticos",
+x = "Diabético",
+y = "HDL") +
+theme_minimal()
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para vverificar distribuição normal
+shapiro.test(data$hdl[data$diabetes == "Sim"])
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal
+shapiro.test(diabetes$hdl[diabetes$diabetico == "Sim"])
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal
+shapiro.test(diabetes$hdl[diabetes$diabetico == "Sim"])
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+shapiro.test(diabetes$hdl[diabetes$diabetico == "Sim"])  # Grupo 1: Diabéticos
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+table(diabetes$diabetico)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])  # Grupo diabético
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])  # Grupo não diabético
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])  # Grupo diabético
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])  # Grupo não diabético
+#como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "Comparação de HDL entre diabéticos e não diabéticos",
+x = "Diabético",
+y = "HDL") +
+theme_minimal()
+aggregate(hdl ~ diabetico, data = diabetes, median)
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])  # Grupo diabético
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])  # Grupo não diabético
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+# O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal precisa ser feito?
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+#O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal deve ser feito
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+# O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+# insira aqui o código para carregar os pacotes necessários
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+# insira aqui o código para leitura dos dados
+# insira aqui o código para analise dos dados
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal deve ser feito
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+# O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+# insira aqui o código para o(s) gráficos que pretende usar
+ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +
+geom_boxplot() +
+labs(title = "Comparação de HDL entre diabéticos e não diabéticos",
+x = "Diabético",
+y = "HDL") +
+theme_minimal()
+aggregate(hdl ~ diabetico, data = diabetes, median)
+# insira aqui o código para carregar os pacotes necessários
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
+# insira aqui o código para leitura dos dados
+# insira aqui o código para analise dos dados
+diabetes <- read_csv("diabetes.csv")
+diabetes$diabetico <-
+ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+# teste de shapiro para verificar distribuição normal deve ser feito
+table(diabetes$diabetico)
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+wilcox.test(hdl ~ diabetico, data = diabetes)
+# O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+install.packages(c("ggplot2", "dplyr", "tidyr", "readr"))

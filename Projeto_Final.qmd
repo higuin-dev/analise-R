@@ -1,0 +1,122 @@
+---
+title: "HDL em diabéticos e não diabéticos"
+author: "Amanda Cavalcanti Pinheiro Barbas, Higor Silva Marques"
+date: '`r format(Sys.Date())`'
+address: 
+  street: "Rua tal e tal, nº XX"
+  city: "São João del Rei"
+  state: "MG"
+  email: "higor.silva396@gmail.com"
+  cel: "(35) 98889-6177"
+
+bibliography: references.bib
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+  pdf:
+    toc: true
+    number-sections: true
+    toc-depth: 2
+    fontsize: 10pt
+    geometry: a4paper
+    
+csl: nature.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+options(knitr.kable.NA = "")
+```
+
+
+## Introdução
+
+O HDL (lipoproteína de alta densidade) é conhecido por sua relação inversa com doenças cardiovasculares devido às suas funções antiaterogênicas, como o transporte reverso de colesterol, atividades antioxidantes e anti-inflamatórias. No entanto, em estados patológicos como resposta inflamatória aguda, obesidade e doenças inflamatórias crônicas, o HDL pode perder essas funções. Essas condições, incluindo diabetes mellitus, aumentam o risco de doenças cardiovasculares. No diabetes mellitus, o HDL passa por alterações estruturais que comprometem suas funções protetoras, contribuindo para maior risco cardiovascular e disfunção do HDL[@farbstein2012]. Assim, esse trabalho busca compreender se há diferença significativa nos níveis de HDL em pacientes diabéticos em comparação com os não diabéticos.
+
+## Materiais e Métodos
+
+Os dados utilizados neste estudo foram obtidos de um banco de dados pré-existente, que contém informações sobre pacientes diabéticos e não diabéticos. A amostra de pacientes foi dividida em dois grupos: um grupo de pacientes diabéticos e um grupo de controle composto por pacientes não diabéticos. A definição de diabetes foi baseada em hemoglobina glicada \> 6.5. A variável de interesse foi o nível de HDL, que foi extraído diretamente do banco de dados. Os dados serão analisados usando o software RStudio [@rstudio] e a linguagem R [@rlanguage]. Os gráficos serão plotados com o pacote ggplot2 [@ggplot]. Para avaliar a normalidade dos dados, será realizado o teste de Shapiro-Wilk. Caso os dados sigam uma distribuição normal, será realizado o teste t de Student para comparação entre os grupos diabéticos e não diabéticos. Caso os dados não sigam uma distribuição normal, a comparação entre os grupos será realizada utilizando o teste de Mann-Whitney. O nível de significância adotado para todas as análises será de 5% (p \< 0,05).
+
+## Resultados
+
+Os níveis de HDL foram comparados entre indivíduos diabéticos e não diabéticos utilizando o teste de Mann-Whitney. Houve uma diferença estatisticamente significativa nos níveis de HDL entre os grupos (W = 7897.5, p = 0.0015). A mediana dos níveis de HDL foi de 41 em diabéticos e 47 em não diabéticos.
+
+```{r ambiente, echo=FALSE, warning=FALSE, message=FALSE}
+# Carregar os pacotes necessários
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(knitr) # Para exibir tabelas organizadas
+library(kableExtra)
+library(gridExtra)
+```
+
+```{r, echo=FALSE}
+# Lendo os dados do arquivo (ajuste o caminho conforme necessário)
+diabetes <- read_csv("diabetes.csv", 
+                      locale = locale(decimal_mark = "."),
+                      show_col_types = FALSE)
+
+# Salvar tabela como imagem
+png("tabela_diabetes.png", width = 12, height = 8, units = "in", res = 300)  # Configurar tamanho e resolução
+grid.table(head(diabetes))  # Mostrar as primeiras linhas como tabela
+invisible(dev.off())  # Finalizar a escrita do arquivo
+```
+
+```{r, echo=FALSE}
+# Criar variável de grupo (diabético ou não)
+diabetes$diabetico <- ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+
+# Filtrar dados válidos
+diabetes_clean <- diabetes %>%
+  filter(!is.na(hdl), !is.na(diabetico)) # Remover valores ausentes
+
+```
+
+## Resultados dos Testes Estatísticos
+
+```{r, echo=FALSE, results='asis'}
+# Limpeza do dataset
+diabetes_clean <- diabetes %>% drop_na(hdl, diabetico)
+
+# Teste de normalidade Shapiro-Wilk
+shapiro_d <- shapiro.test(diabetes_clean$hdl[diabetes_clean$diabetico == "diabético"])
+shapiro_nd <- shapiro.test(diabetes_clean$hdl[diabetes_clean$diabetico == "não diabético"])
+
+# Teste de Wilcoxon
+wilcox_test <- wilcox.test(hdl ~ diabetico, data = diabetes_clean)
+
+# Apresentar resultados com texto
+cat(sprintf("1. Para os diabéticos, o teste de Shapiro-Wilk apresentou **W = %.4f**, p = %.4g.\n\n", 
+            shapiro_d$statistic, shapiro_d$p.value))
+
+cat(sprintf("2. Para os não diabéticos, o teste de Shapiro-Wilk apresentou **W = %.4f**, p = %.4g.\n\n", 
+            shapiro_nd$statistic, shapiro_nd$p.value))
+
+cat(sprintf("3. O teste de Wilcoxon apresentou **W = %.1f**, p = %.4g, indicando uma diferença significativa entre os grupos.\n\n", 
+            wilcox_test$statistic, wilcox_test$p.value))
+```
+
+```{r, echo=FALSE}
+# Criar gráfico de boxplot comparando os grupos
+ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +
+  geom_boxplot() +
+  labs(title = "Comparação de HDL entre diabéticos e não diabéticos",
+       x = "Diabético",
+       y = "Nível de HDL (mg/dL)") +
+  theme_minimal() +
+  scale_fill_manual(values = c("diabético" = "#FF00FF", "não diabético" = "#FFD700"))
+```
+
+## Discussão
+
+Os resultados indicaram que os indivíduos diabéticos apresentaram níveis significativamente mais baixos de HDL em comparação aos não diabéticos, corroborando a literatura que associa o diabetes a menores níveis de HDL. A redução dos níveis de HDL é um dos aspectos mais comuns e preocupantes observados na síndrome metabólica. A resistência à insulina, a obesidade e os altos níveis de triglicerídeos desempenham papéis centrais na associação com baixos níveis de HDL[@srivastava2018]. Somada à disfunção estrutural e funcional, que compromete suas propriedades antiaterogênicas, como o transporte reverso de colesterol e suas atividades antioxidantes e anti-inflamatórias, verifica-se um maior risco cardiovascular nessa população.
+
+Além disso, o boxplot reflete claramente essa diferença, com valores medianos mais baixos no grupo diabético. Esses achados reforçam a necessidade de uma abordagem clínica que vá além do controle glicêmico, considerando estratégias para preservar ou melhorar os níveis e a funcionalidade do HDL em pacientes diabéticos. Por fim, estudos futuros são necessários para investigar intervenções específicas voltadas à melhoria da funcionalidade do HDL e sua relação com a redução do risco cardiovascular em indivíduos com diabetes mellitus.
+
+

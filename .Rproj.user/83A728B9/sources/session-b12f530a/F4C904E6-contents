@@ -1,0 +1,107 @@
+---
+title: "HDL em diabéticos e não diabéticos"
+author: "Amanda Cavalcanti Pinheiro Barbas"
+date: '`r format(Sys.Date())`'
+adress: 
+  street: "Rua tal e tal , nº XX"
+  city: "São João del Rei"
+  state: "MG"
+  email: "amandacpb.ufsj@gmail.com"
+  cel: "(22) 98151-4551"
+
+bibliography: references.bib
+
+format:
+  html:
+    embed-resources: true
+  pdf: default
+    
+csl: nature.csl
+---
+
+## Introdução
+
+O HDL (lipoproteína de alta densidade) é conhecido por sua relação inversa com doenças cardiovasculares devido às suas funções antiaterogênicas, como o transporte reverso de colesterol, atividades antioxidantes e anti-inflamatórias. No entanto, em estados patológicos como resposta inflamatória aguda, obesidade e doenças inflamatórias crônicas, o HDL pode perder essas funções. Essas condições, incluindo diabetes mellitus, aumentam o risco de doenças cardiovasculares. No diabetes mellitus, o HDL passa por alterações estruturais que comprometem suas funções protetoras, contribuindo para maior risco cardiovascular e disfunção do HDL.[@farbstein2012]. Assim, esse trabalho busca compreender se há diferença significativa nos níveis de HDL em pacientes diabéticos em comparação com os não diabéticos.
+
+
+## Materiais e Métodos
+
+Os dados utilizados neste estudo foram obtidos de um banco de dados pré-existente, que contém informações sobre pacientes diabéticos e não diabéticos.A amostra de pacientes foi dividida em dois grupos: um grupo de pacientes diabéticos e um grupo de controle composto por pacientes não diabéticos. A definição de diabetes foi baseada em hemoglobina glicada \> 6.5. A variável de interesse foi o nível de HDL, que foi extraído diretamente do banco de dados.Os dados serão analisados usando o software RStudio [@rstudio] e a linguagem R [@rlanguage]. Os gráficos serão plotados com o pacote ggplot2 [@ggplot].Para avaliar a normalidade dos dados, será realizado o teste de Shapiro-Wilk. Caso os dados sigam uma distribuição normal, será realizado o teste t de Student para comparação entre os grupos diabéticos e não diabéticos. Caso os dados não sigam uma distribuição normal, a comparação entre os grupos será realizada utilizando o teste de Mann-Whitney. O nível de significância adotado para todas as análises será de 5% (p \< 0,05).
+
+## Resultados
+
+Nessa seção você vai fazer a análise dos dados e escrever os resultados
+
+Os níveis de HDL foram comparados entre indivíduos diabéticos e não diabéticos utilizando o teste de Mann-Whitney. Houve uma diferença estatisticamente significativa nos níveis de HDL entre os grupos (W = 7897.5, p = 0.0015). A mediana dos níveis de HDL foi de 41 em diabéticos e 47 em não diabéticos
+
+```{r, ambiente, echo=FALSE, warning=FALSE, message=FALSE}
+# insira aqui o código para carregar os pacotes necessários
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
+
+```
+
+```{r, leitura dos dados, echo=FALSE}
+# insira aqui o código para leitura dos dados
+
+
+```
+
+```{r, manipulação e analise, echo=FALSE}
+# insira aqui o código para analise dos dados
+
+diabetes <- read_csv("diabetes.csv")
+
+diabetes$diabetico <-
+  ifelse(diabetes$glyhb >= 6.5, "diabético", "não diabético")
+diabetes$diabetico <- as.factor(diabetes$diabetico)
+
+diabetes_clean <- diabetes[!is.na(diabetes$hdl) & !is.na(diabetes$diabetico), ]
+
+# teste de shapiro para verificar distribuição normal deve ser feito
+
+table(diabetes$diabetico)
+
+shapiro.test(diabetes$hdl[diabetes$diabetico == "diabético"])
+shapiro.test(diabetes$hdl[diabetes$diabetico == "não diabético"])
+
+# como os dados de ambos os grupos não seguem uma distribuição normal, será realizado o teste de Mann-Whitney para verificar diferença significativa entre os dois grupos:
+
+wilcox.test(hdl ~ diabetico, data = diabetes)
+
+# O resultado do teste de Mann-Whitney (Wilcoxon Rank-Sum Test) indica que há uma diferença estatisticamente significativa nos níveis de HDL entre os grupos de diabéticos e não diabéticos. O p-value de 0.001459 é menor que o nível de significância padrão (0.05), permitindo rejeitar a hipótese nula de que as distribuições de HDL são iguais nos dois grupos.
+```
+
+```{r, grafico, echo=FALSE, warning=FALSE}
+# insira aqui o código para o(s) gráficos que pretende usar
+
+ggplot(diabetes_clean, aes(x = diabetico, y = hdl, fill = diabetico)) +
+  geom_boxplot() +
+  labs(title = "Comparação de HDL entre diabéticos e não diabéticos",
+       x = "Diabético",
+       y = "HDL") +
+  theme_minimal()
+
+aggregate(hdl ~ diabetico, data = diabetes, median)
+```
+
+## Discussão
+
+Os resultados indicaram que os indivíduos diabéticos apresentaram níveis significativamente mais baixos de HDL em comparação aos não diabéticos, corroborando com a literatura que associa o diabetes a menores níveis de HDL. A redução dos níveis de HDL é um dos aspectos mais comuns e preocupantes observados na síndrome metabólica. A resistência à insulina, a obesidade e os altos níveis de triglicérides desempenham papéis centrais na associação com baixos níveis de HDL [@srivastava2018].
+Somada à disfunção estrutural e funcional, que compromete suas propriedades antiaterogênicas, como o transporte reverso de colesterol e suas atividades antioxidantes e anti-inflamatórias,verifica-se um maior risco cardiovascular nessa população.
+Além disso, o boxplot reflete claramente essa diferença, com valores medianos mais baixos no grupo diabético. Esses achados reforçam a necessidade de uma abordagem clínica que vá além do controle glicêmico, considerando estratégias para preservar ou melhorar os níveis e a funcionalidade do HDL em pacientes diabéticos.
+Por fim, estudos futuros são necessários para investigar intervenções específicas voltadas à melhoria da funcionalidade do HDL e sua relação com a redução do risco cardiovascular em indivíduos com diabetes mellitus.
+
+
+
+
+
+## Referências
+
+As referências irão aparecer aqui automaticamente, bastanto estarem inseridas no documento chamado "references.bib". As referências lá devem estar no formato bib. Esse é um formato fácil e entender e conveniente. A maioria dos sites gera as referências no formato bib. Dê uma olhada lá e verá que é simples entender.
+
+::: {#refs}
+:::

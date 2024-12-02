@@ -1,0 +1,8 @@
+"0","# Carregar os pacotes necessários"
+"0","library(ggplot2)"
+"0","library(dplyr)"
+"0","library(tidyr)"
+"0","library(readr)"
+"0","library(knitr) # Para exibir tabelas organizadas"
+"0","library(kableExtra)"
+"0","library(gridExtra)"
